@@ -109,20 +109,44 @@ The ultimate objective is to achieve a predictive accuracy higher than 75%. Once
 ##### Data Preprocessing
 
 * What variable(s) are the target(s) for your model?
+  
   The target variable for the model is IS_SUCCESSFUL, displaying whether a charity donation was successful or not.
 
 * What variable(s) are the features for your model?
+  
   The feature variables for the model are the rest of the columns in the DataFrame, excluding IS_SUCCESSFUL
   
 * What variable(s) should be removed from the input data because they are neither targets nor features
-  I believe that NAME and EIN (Employee Identification Number) does not contain relevant information for our predictive model, hence left    out this variable from the feature and target selection. 
+  
+  I believe that EIN (Employee Identification Number) does not contain relevant information for our predictive model, hence left out this variable from the feature and target selection. 
   
 Compiling, Training, and Evaluating the Model
 
-How many neurons, layers, and activation functions did you select for your neural network model, and why?
+How many neurons, layers, and activation functions did you select for your neural network model, and why? 
+
+For this neural network model, I chose four hidden layers with 40,80, 40, and 5 neurons respectively. After several iterations and tests with different numbers of neurons and layers, this combination produced the best results in terms of accuracy and loss. For the activation functions, I chose ReLU for the first hidden layer to introduce non-linearity in the model and improve its performance. I selected sigmoid for the second, tanh for the third and soft-max for the fourth to increase accuracy of the model. For the final output layer, I used sigmoid activation function to ensure the output is between 0 and 1, which is needed for binary classification.
+
+<img width="945" alt="Screenshot 2023-07-19 at 1 58 21 AM" src="https://github.com/svafaeva93/deep-learning-challenge/assets/124627601/53fb01f2-d55c-4e77-906f-3d0579a6fc57">
+
 Were you able to achieve the target model performance?
+
+Yes, I was able to develop a successful deep neural network model using TensorFlow and Keras to predict if an Alphabet Soup-funded organization would be successful. Through several iterations for the optimal model, I was able to achieve a predictive accuracy higher than 75%, with a final accuracy score of 78.12%. This model could be a valuable tool for Alphabet Soup in selecting the applicants with the best chance of success in their ventures.
+
+<img width="578" alt="Screenshot 2023-07-19 at 2 01 39 AM" src="https://github.com/svafaeva93/deep-learning-challenge/assets/124627601/3884e18f-287d-4069-8273-6e1df1c0c304">
+
 What steps did you take in your attempts to increase model performance?
+
+During the optimization process, the EIN column was dropped as it was not relevant. However, keeping the NAME column improved model accuracy. To refine the data, a cutoff value was chosen, and names occurring less than 10 times were replaced with "Other". A similar approach was applied to the CLASSIFICATION column, where categories with fewer than 1000 occurrences were replaced with "Other". The resulting binning was verified for accuracy.
+
+<img width="590" alt="Screenshot 2023-07-19 at 2 04 23 AM" src="https://github.com/svafaeva93/deep-learning-challenge/assets/124627601/e91be88a-ec22-4c1b-b4d5-05c8f9ddd438">
+
+<img width="624" alt="Screenshot 2023-07-19 at 2 05 17 AM" src="https://github.com/svafaeva93/deep-learning-challenge/assets/124627601/4ce93314-69cf-4027-8f6a-951f6d3c5873">
+
 Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+
+The deep learning model using TensorFlow and Keras achieved a 78% predictive accuracy in classifying the success of Alphabet Soup-funded organizations. The model underwent various optimization attempts, including column dropping, categorical variable binning, and adjusting layers and activation functions. While the target accuracy of 75% was eventually reached, it required significant optimization efforts.
+
+To improve classification, alternative models like Random Forest Classifier or Support Vector Machine (SVM) can be explored. These models handle both numerical and categorical variables, outliers, and imbalanced datasets effectively. Considering these alternatives may offer a potential solution to enhance classification performance.
 
 ### Step 5: Copy Files Into Your Repository
 Now that you're finished with your analysis in Google Colab, you need to get your files into your repository for final submission.
