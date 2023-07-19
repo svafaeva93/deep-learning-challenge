@@ -142,7 +142,7 @@ During the optimization process, the EIN column was dropped as it was not releva
 
 <img width="624" alt="Screenshot 2023-07-19 at 2 05 17 AM" src="https://github.com/svafaeva93/deep-learning-challenge/assets/124627601/4ce93314-69cf-4027-8f6a-951f6d3c5873">
 
-Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+### Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
 
 The deep learning model using TensorFlow and Keras achieved a 78% predictive accuracy in classifying the success of Alphabet Soup-funded organizations. The model underwent various optimization attempts, including column dropping, categorical variable binning, and adjusting layers and activation functions. While the target accuracy of 75% was eventually reached, it required significant optimization efforts.
 
